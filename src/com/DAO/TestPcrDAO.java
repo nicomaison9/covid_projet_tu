@@ -65,14 +65,14 @@ public class TestPcrDAO implements Serializable {
 		try {
 			//Statement st = conn.createStatement();
 			
-			PreparedStatement prst = conn.prepareStatement("INSERT INTO TestPcr (id, jour, mois,annee,id_teste,resultat) VALUES (?,?,?,?,?,?)");
+			PreparedStatement prst = conn.prepareStatement("INSERT INTO TestPcr (jour, mois,annee,id_teste,resultat) VALUES (?,?,?,?,?)");
 			
-			prst.setLong(1, e.getId_test());
-			prst.setLong(2, e.getJour());
-			prst.setLong(3, e.getMois());
-			prst.setLong(1, e.getAnnee());
-			prst.setLong(2, e.getId_cas());
-			prst.setLong(3, e.getResultat());
+//			prst.setLong(1, e.getId_test());
+			prst.setLong(1, e.getJour());
+			prst.setLong(2, e.getMois());
+			prst.setLong(3, e.getAnnee());
+			prst.setLong(4, e.getId_cas());
+			prst.setLong(5, e.getResultat());
 			
 			
 //			prst.execute();
@@ -121,12 +121,12 @@ public class TestPcrDAO implements Serializable {
 			if (rs != null) {
 				while (rs.next()) {
 					TestPcr p =new TestPcr();
-					p.setId_test((int) rs.getLong("id_TestPcr"));
-					p.setJour((int) rs.getLong("nom_complet"));
-					p.setMois((int) rs.getLong("telephone"));
-					p.setAnnee((int) rs.getLong("nom_complet"));
-					p.setId_cas((int) rs.getLong("telephone"));
-					p.setResult((int) rs.getLong("id_TestPcr"));
+					p.setId_test((int) rs.getLong("id"));
+					p.setJour((int) rs.getLong("jour"));
+					p.setMois((int) rs.getLong("mois"));
+					p.setAnnee((int) rs.getLong("annee"));
+					p.setId_cas((int) rs.getLong("id_teste"));
+					p.setResult((int) rs.getLong("resultat"));
 					
 					
 					

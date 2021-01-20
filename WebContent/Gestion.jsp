@@ -1,6 +1,9 @@
 <%-- <%@page import="org.apache.tomcat.util.security.Escape"%> --%>
 <%-- <%@page import="DAO.CasDAO"%> --%>
-<%@page import="java.util.ArrayList" import="com.DAO.CasDAO"
+<%@page import="com.covid.TestPcr"%>
+<%@page import="java.util.ArrayList" 
+import="com.DAO.CasDAO"
+import="com.DAO.TestPcrDAO"
 	import="com.covid.Cas"%>
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -16,7 +19,7 @@
 	href="${pageContext.request.contextPath}/css/stylesheet.css">
 </head>
 <body>
-<h1>Tableau de gestion des cas de covid</h1>
+	<h1>Tableau de gestion des cas de covid</h1>
 	<%--  <jsp:useBean id="lcas" --%>
 	<%-- 		class="com.DAO.CasDAO" scope="page"></jsp:useBean> --%>
 	<%-- 	<jsp:setProperty property="*" name="lcas" />  --%>
@@ -31,73 +34,140 @@
 	<%-- <td>${a.etat}</td> --%>
 	<!-- </tr> -->
 	<%-- </c:forEach> --%>
-	<%	if (request.getAttribute("erreur") != null) {	%>
-			
-		<div class="errors">
-			<%=request.getAttribute("erreur")%></div>
-		<%
-			}
-		%>
+	<%
+		if (request.getAttribute("erreur") != null) {
+	%>
+
+	<div class="errors">
+		<%=request.getAttribute("erreur")%></div>
+	<%
+		}
+	%>
 	<%
 		ArrayList<Cas> liste = new ArrayList<Cas>();
-	try {
-		liste = CasDAO.getListe();
-		String str = "";
-		str = "=======liste des cas enregistrés=======\n";
-		for (int i = 0; i < liste.size(); i++) {
-			str = str + liste.get(i).toString() + "\n";
-		}
-		System.out.println(str);
+		ArrayList<TestPcr> listep= new ArrayList<TestPcr>();
+	
 	%>
-	<table border=1>
+	<table>
 		<tr>
-			<th>id</th>
-			<th>nom prenom</th>
-			<th>telephone</th>
-			<th>adresse</th>
-			<th>codepostal</th>
-			<th>etat</th>
-		</tr>
-		<%
-			
-		%><tr>
-			<%
-				for (int i = 0; i < liste.size(); i++) {
-			%><td><%=liste.get(i).getId_cas()%></td>
-			<%
-				
-			%><td><%=liste.get(i).getNom_complet()%></td>
-			<%
-				
-			%><td><%=liste.get(i).getTelephone()%></td>
-			<%
-				
-			%><td><%=liste.get(i).getAdresse()%></td>
-			<%
-				
-			%><td><%=liste.get(i).getCode_postal()%></td>
-			<%
-				
-			%><td><%=liste.get(i).getEtat()%></td>
-		</tr>
-		<%
-			}
 
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		%>
+			<form action="controleur" method="post">
+				<input type="hidden" name="action" value="deconnexion" /> <input
+					type="submit" value="deconnexion" />
+			</form>
+			<td>
+				<form action="controleur" method="post">
+					<input type="hidden" name="action" value="ajouterCas" /> <input
+						type="submit" value="ajouter un cas" />
+				</form>
+				<table border=1>
+					<tr>
+						<th>id</th>
+						<th>nom prenom</th>
+						<th>telephone</th>
+						<th>adresse</th>
+						<th>codepostal</th>
+						<th>etat</th>
+					</tr>
+					<%
+						
+					%><tr>
+						<%try {
+							liste = CasDAO.getListe();
+							String str = "";
+							str = "=======liste des cas enregistrés=======\n";
+							for (int i = 0; i < liste.size(); i++) {
+								str = str + liste.get(i).toString() + "\n";
+							}
+							System.out.println(str);
+							for (int i = 0; i < liste.size(); i++) {
+						%><td><%=liste.get(i).getId_cas()%></td>
+						<%
+							
+						%><td><%=liste.get(i).getNom_complet()%></td>
+						<%
+							
+						%><td><%=liste.get(i).getTelephone()%></td>
+						<%
+							
+						%><td><%=liste.get(i).getAdresse()%></td>
+						<%
+							
+						%><td><%=liste.get(i).getCode_postal()%></td>
+						<%
+							
+						%><td><%=liste.get(i).getEtat()%></td>
+					</tr>
+					<%
+						}
 
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					%>
+
+					</tr>
+				</table>
+			</td>
+			<td>
+			</td>
+			<td><form action="controleur" method="post">
+					<input type="hidden" name="action" value="ajouterTestPcr" /> <input
+						type="submit" value="ajouter un testPcr" />
+				</form>
+				<table border=1>
+					<tr>
+						<th>id</th>
+						<th>jour</th>
+						<th>mois</th>
+						<th>annee</th>
+						<th>cas teste</th>
+						<th>resultat</th>
+					</tr>
+					<%
+						
+					%><tr>
+						<%
+						try {
+							listep = TestPcrDAO.getListe();
+							String str1 = "";
+							str1 = "=======liste des testPcr enregistrés=======\n";
+							for (int i = 0; i < listep.size(); i++) {
+								str1 = str1 + listep.get(i).toString() + "\n";
+							}
+							System.out.println(str1);
+							for (int i = 0; i < listep.size(); i++) {
+						%><td><%=listep.get(i).getId_test()%></td>
+						<%
+							
+						%><td><%=listep.get(i).getJour()%></td>
+						<%
+							
+						%><td><%=listep.get(i).getMois()%></td>
+						<%
+							
+						%><td><%=listep.get(i).getAnnee()%></td>
+						<%
+							
+						%><td><%=listep.get(i).getId_cas()%></td>
+						<%
+							
+						%><td><%=listep.get(i).getResultat()%></td>
+					</tr>
+					<%
+						}
+
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					%>
+
+					</tr>
+				</table></td>
 		</tr>
 	</table>
-	<form action="controleur" method="post">
-		<input type="hidden" name="action" value="ajouterCas" /> <input
-			type="submit" value="ajouter un cas" />
-	</form>
-	<form action="controleur" method="post">
-						<input type="hidden" name="action" value="deconnexion" /> <input
-							type="submit" value="deconnexion" />
-					</form>
+
 </body>
 </html>

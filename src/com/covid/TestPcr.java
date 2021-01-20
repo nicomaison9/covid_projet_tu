@@ -23,7 +23,7 @@ public class TestPcr {
 		mois = datetest.getMonthValue();
 		jour = datetest.getDayOfMonth();
 		
-		result=setResultat(resultat);
+		setResultat(resultat);
 
 	}
 
@@ -39,7 +39,7 @@ public class TestPcr {
 
 	public static boolean dateIsValid(int jour, int mois, int annee) {
 		boolean valid = true;
-		if (mois <= 1 || mois >= 12) {
+		if (mois < 1 || mois > 12) {
 			valid = false;
 		}
 		if (mois == 1 || mois == 3 || mois == 5 || mois == 7 || mois == 8 || mois == 10 || mois == 12) {
@@ -121,8 +121,8 @@ public class TestPcr {
 		this.annee = annee;
 	}
 
-	public int setResultat(int resultat) {
-		return  resultat;
+	public void setResultat(int resultat) {
+		this.result = resultat;
 	}
 
 	public static String afficher(ArrayList<TestPcr> liste) {

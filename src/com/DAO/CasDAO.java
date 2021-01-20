@@ -26,20 +26,36 @@ public class CasDAO implements Serializable {
 
 
 	public static ArrayList<String> getListeId_cas() {
+		Statement st;
+		ResultSet rs;
 		ArrayList<String> liste = new ArrayList<String>();
 		try {
-			PreparedStatement prst = conn.prepareStatement("select Id_cas from cas");
-			for (String o : liste) {
-				liste.add(o);
+			st = conn.createStatement();
+			rs = st.executeQuery("select distinct id_cas from cas order by id_cas");						
+			if (rs != null) {
+				while (rs.next()) {
+					String p =rs.getString("id_cas");
+					
+					
+					liste.add(p);					
+				}
 			}
+
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 		return liste;
 	}
 	
 	
+	public static boolean IdisExisting(int Id) throws Exception {
+		for (Cas e : getListe()) {
+			if (e.getId_cas() == Id)
+				return true;
+		}
+		return false;
+	}
 
 	
 	
