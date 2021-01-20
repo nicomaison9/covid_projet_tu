@@ -111,7 +111,7 @@ public class Cas {
 		if (nomIsComplet(nom_complet))
 			this.nom_complet = nom_complet;
 			else
-				System.out.println("le nom et le prénom doivent être séparés par un espace ");
+				System.out.println("le nom et le prénom  doivent être séparés par un espace ");
 		
 	}
 

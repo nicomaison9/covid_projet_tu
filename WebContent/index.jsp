@@ -8,13 +8,12 @@
 </head>
 <body>
 	<form action="controleur" method="post">
-login<input type="text" name="login"><br/>
-
-pass<input type="password" name="pwd">
+		login<input type="text" required name="login"><br /> pass<input
+			type="password" required name="pwd">
 		<p>
 			<input type="hidden" name="action" value="authentification" />
 		<p></p>
-			<input type="submit" value="s'authentifier" />
+		<input type="submit" value="s'authentifier" />
 		</p>
 
 	</form>
