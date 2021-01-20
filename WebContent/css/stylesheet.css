@@ -1,0 +1,68 @@
+header.page-header {
+	background-color: rgb(66, 188, 250);
+	display: flex;
+	height: 120px;
+	min-width: 120px;
+	align-items: center;
+	color: #fff;
+	text-shadow: #000 0 0 .2em;
+}
+/* -------------- */
+.errors{ color:red;
+background-color: rgb(254, 231, 240);}
+/* -------------- */
+header.page-header>h1 {
+	font: bold calc(1em + 2 * ( 100vw - 120px)/100) 'Dancing Script',
+		cursive, fantasy;
+	margin: 2%;
+}
+footer{
+	background-color: rgb(66, 188, 250);
+	font: bold 10px 'Dancing Script',
+		cursive, fantasy;
+}
+body {
+	background-color: rgb(232, 244, 249)
+}
+
+
+div.container {
+	background-color: rgb(155, 218, 249)
+}
+
+tbody tr:nth-child(odd) {
+  background-color: rgb(232, 244, 249);
+}
+
+tbody tr:nth-child(even) {
+  background-color: rgb(155, 218, 249);
+}
+
+
+tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+table {
+  background-color: rgb(66, 188, 250);
+}
+tbody tr.active-row {
+    font-weight: bold;
+    color: rgb(66, 188, 250);
+}
+
+aside{
+	background: rgb(155, 218, 249);
+	width: 200px; 
+	position: absolute;
+	top: 250px; 
+	left: 800px;
+}
+
+
+
+
+
+

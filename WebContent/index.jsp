@@ -8,8 +8,10 @@
 </head>
 <body>
 	<form action="controleur" method="post">
-		login<input type="text" required name="login"><br /> pass<input
-			type="password" required name="pwd">
+		<!-- login<input type="text" required pattern="[A-Za-z0-9]{4,30}" name="login"><br /> 
+		pass<input	type="password" required pattern="[A-Za-z0-9] name="pwd"> -->
+		login<input type="text" name="login"><br /> 
+		pass<input	type="password"  name="pwd">
 		<p>
 			<input type="hidden" name="action" value="authentification" />
 		<p></p>
