@@ -1,0 +1,21 @@
+<project>
+	<target name="clean">
+		<delete dir="WebContent\WEB-INF\bin" />
+	</target>
+	<target name="compile">
+		<mkdir dir="WebContent\WEB-INF\bin" />
+		<javac destdir="WebContent\WEB-INF\bin" srcdir="src;tests" classpath="WebContent\WEB-INF\lib\junit.jar" />
+	</target>
+	<target name="tests" depends="compile">
+		<junit>
+			<classpath>
+				<pathelement location="WebContent\WEB-INF\lib\junit.jar" />
+				<pathelement location="WebContent\WEB-INF\lib\org.hamcrest.core_1.3.0.v20180420-1519.jar" />
+				<pathelement location="${basedir}WebContent\WEB-INF\bin" />
+			</classpath>
+			<formatter type="xml" />
+			<test name="triangle.TriangleTest" outfile="result">
+			</test>
+		</junit>
+	</target>
+</project>
