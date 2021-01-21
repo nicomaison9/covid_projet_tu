@@ -9,16 +9,17 @@ public class listCasDAO {
 	listCasDAO() {
 
 //	CasDAO lcas = new CasDAO();
-		ArrayList<Cas> liste=new ArrayList<Cas>();
+		ArrayList<Cas> liste = new ArrayList<Cas>();
 		try {
 			liste = CasDAO.getListe();
 			String str = "";
-			str="=======liste des cas enregistrés=======\n";
-			for(int i=0;i<liste.size();i++) {
-				str=str+ liste.get(i).toString()+"\n";
+			str = "=======liste des cas enregistrés=======\n";
+			for (int i = 0; i < liste.size(); i++) {
+
+				str = str + liste.get(i).toString() + "\n";
 			}
-			System.out.println(str); 
-			for (int i=0; i < liste.size(); i++) {
+			System.out.println(str);
+			for (int i = 0; i < liste.size(); i++) {
 				liste.get(i).getId_cas();
 				liste.get(i).getNom_complet();
 				liste.get(i).getTelephone();
@@ -26,30 +27,30 @@ public class listCasDAO {
 				liste.get(i).getCode_postal();
 				liste.get(i).getEtat();
 			}
-			
+
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		ArrayList<String> liste2=new ArrayList<String>();
+		ArrayList<String> liste2 = new ArrayList<String>();
 		try {
 			liste2 = CasDAO.getListeId_cas();
 			String str = "";
-			str="=======liste des Id de cas enregistrés=======\n";
-			for(int i=0;i<liste2.size();i++) {
-				str=str+ liste2.get(i).toString()+"\n";
+			str = "=======liste des Id de cas enregistrés=======\n";
+			for (int i = 0; i < liste2.size(); i++) {
+				str = str + liste2.get(i).toString() + "\n";
 			}
-			System.out.println(str); 
-			for (int i=0; i < liste2.size(); i++) {
+			System.out.println(str);
+			for (int i = 0; i < liste2.size(); i++) {
 				liste2.get(i);
-				
+
 			}
-			
+
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		ArrayList<TestPcr> listep=new ArrayList<TestPcr>();
+		ArrayList<TestPcr> listep = new ArrayList<TestPcr>();
 		try {
 			listep = TestPcrDAO.getListe();
 			String str1 = "";
@@ -59,30 +60,24 @@ public class listCasDAO {
 			}
 			System.out.println(str1);
 			for (int i = 0; i < listep.size(); i++) {
-		listep.get(i).getId_test();
-		
-			
-		listep.get(i).getJour();
-		
-			
-		listep.get(i).getMois();
-		
-			
-		listep.get(i).getAnnee()
-		;
-			
-		listep.get(i).getId_cas();
-		
-			
-		listep.get(i).getResultat();
-	
-	
-		}
+				listep.get(i).getId_test();
 
-	} catch (Exception e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
+				listep.get(i).getJour();
+
+				listep.get(i).getMois();
+
+				listep.get(i).getAnnee();
+
+				listep.get(i).getId_cas();
+
+				listep.get(i).getResultat();
+
+			}
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 //		--  <jsp:useBean id="lcas" --
 //	-- 		class="com.DAO.CasDAO" scope="page"></jsp:useBean> --
 //	-- 	<jsp:setProperty property="*" name="lcas" />  --
@@ -96,5 +91,41 @@ public class listCasDAO {
 //	-- ${a.code_postal} --
 //	-- ${a.etat} --
 //
+	}
+
+	public void listeduncas() {
+		ArrayList<TestPcr> listep = new ArrayList<TestPcr>();
+		int id_cas = 1;
+		try {
+			listep = TestPcrDAO.getListe();
+			String str1 = "";
+			str1 = "=======liste des testsPcr enregistrés=======\n";
+			for (int i = 0; i < listep.size(); i++) {
+				if (listep.get(i).getId_cas() == id_cas) {
+					str1 = str1 + listep.get(i).toString() + "\n";
+				}
+			}
+			System.out.println(str1);
+			for (int i = 0; i < listep.size(); i++) {
+				if (listep.get(i).getId_cas() == id_cas) {
+					listep.get(i).getId_test();
+
+					listep.get(i).getJour();
+
+					listep.get(i).getMois();
+
+					listep.get(i).getAnnee();
+
+					listep.get(i).getId_cas();
+
+					listep.get(i).getResultat();
+
+				}
+			}
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }

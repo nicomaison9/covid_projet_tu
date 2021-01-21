@@ -23,19 +23,19 @@
 		<!-- login<input type="text" required pattern="[A-Za-z0-9]{4,30}" name="login"><br /> 
 		pass<input	type="password" required pattern="[A-Za-z0-9] name="pwd"> -->
 		<p>
-			nom prenom<input type="text" name="nom_complet"><br />
+			nom prenom<input type="text" required pattern="[A-Za-z ]{1,200}" title="caractères alphabétiques maj et/ou min|nom et prénom séparés par un espace" name="nom_complet"><br />
 		</p>
 		<p>
-			telephone<input type="text" name="telephone"><br />
+			telephone<input type="text" required pattern="[0-9+]{8,11}" title="caract. numériques|commence par + ou 00| 8 caractères mini" name="telephone"><br />
 		</p>
 		<p>
-			adresse<input type="text" name="adresse"><br />
+			adresse<input type="text" required pattern="[A-Za-z ]{1,200}" title="caractères alphabétiques + espaces uniquement" name="adresse"><br />
 		</p>
 		<p>
-			code_postal<input type="text" name="code_postal"><br />
+			code_postal<input type="text" required pattern="[0-9]{5}" title="5 caractères numériques"  name="code_postal"><br />
 		</p>
 		<p>
-			statut covid<select name="etat">
+			statut covid <select required name="etat">
 				<option value="-1">-1 negatif</option>
 				<option value="1">1 positif</option>
 			</select><br />

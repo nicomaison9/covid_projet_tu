@@ -60,11 +60,13 @@ public class Controleur extends HttpServlet {
 			String login = request.getParameter("login");
 			String pwd = request.getParameter("pwd");
 			Admin admin = new Admin(login, pwd);
-			String erreur = "";
-			if (Admin.isAdmin4real(admin)) {
+			ArrayList<String> erreur3 = new ArrayList<String>();
+			if (AdminDAO.isAdmin4real(admin)) {
 				response.sendRedirect("Gestion.jsp");
 			} else {
-				session.setAttribute("erreur", erreur);
+				erreur3.add("login ou mot de passe inconnus");
+				request.setAttribute("erreur", erreur3);
+				request.getRequestDispatcher("index.jsp").forward(request, response);
 			}
 			break;
 		case "deconnexion":
@@ -129,7 +131,8 @@ public class Controleur extends HttpServlet {
 					casToAdd.setAdresse(adresse);
 					casToAdd.setCode_postal(code_postal);
 					casToAdd.setEtat(Integer.parseInt(etat));
-					CasDAO.ajouterCas(casToAdd);
+					CasDAO.ajouterCas(casToAdd); 
+					
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -137,7 +140,12 @@ public class Controleur extends HttpServlet {
 			}
 			request.getRequestDispatcher("Gestion.jsp").forward(request, response);
 			break;
-			
+		case "testsDuCas":
+			String id_cas2Search=request.getParameter("id_casToSearch");
+			request.setAttribute("id_casToSearch",id_cas2Search );
+			request.getRequestDispatcher("Gestion.jsp").forward(request, response);
+			break;
+		
 //cas de testPCR			
 			
 		case "ajouterTestPcr":

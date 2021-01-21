@@ -1,10 +1,8 @@
 <%-- <%@page import="org.apache.tomcat.util.security.Escape"%> --%>
 <%-- <%@page import="DAO.CasDAO"%> --%>
 <%@page import="com.covid.TestPcr"%>
-<%@page import="java.util.ArrayList" 
-import="com.DAO.CasDAO"
-import="com.DAO.TestPcrDAO"
-	import="com.covid.Cas"%>
+<%@page import="java.util.ArrayList" import="com.DAO.CasDAO"
+	import="com.DAO.TestPcrDAO" import="com.covid.Cas"%>
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
@@ -19,7 +17,7 @@ import="com.DAO.TestPcrDAO"
 	href="${pageContext.request.contextPath}/css/stylesheet.css">
 </head>
 <body>
-	<h1>Tableau de gestion des cas de covid</h1>
+	<h1>Tableau de bord</h1>
 	<%--  <jsp:useBean id="lcas" --%>
 	<%-- 		class="com.DAO.CasDAO" scope="page"></jsp:useBean> --%>
 	<%-- 	<jsp:setProperty property="*" name="lcas" />  --%>
@@ -45,8 +43,7 @@ import="com.DAO.TestPcrDAO"
 	%>
 	<%
 		ArrayList<Cas> liste = new ArrayList<Cas>();
-		ArrayList<TestPcr> listep= new ArrayList<TestPcr>();
-	
+	ArrayList<TestPcr> listep = new ArrayList<TestPcr>();
 	%>
 	<table>
 		<tr>
@@ -55,7 +52,9 @@ import="com.DAO.TestPcrDAO"
 				<input type="hidden" name="action" value="deconnexion" /> <input
 					type="submit" value="deconnexion" />
 			</form>
-			<td>
+			<td><center>
+					<h2>gestion des cas</h2>
+				</center>
 				<form action="controleur" method="post">
 					<input type="hidden" name="action" value="ajouterCas" /> <input
 						type="submit" value="ajouter un cas" />
@@ -72,7 +71,8 @@ import="com.DAO.TestPcrDAO"
 					<%
 						
 					%><tr>
-						<%try {
+						<%
+							try {
 							liste = CasDAO.getListe();
 							String str = "";
 							str = "=======liste des cas enregistrés=======\n";
@@ -81,7 +81,13 @@ import="com.DAO.TestPcrDAO"
 							}
 							System.out.println(str);
 							for (int i = 0; i < liste.size(); i++) {
-						%><td><%=liste.get(i).getId_cas()%></td>
+						%><td><%=liste.get(i).getId_cas()%>
+							<form action="controleur" method="post">
+								<input type="hidden" name="id_casToSearch"
+									value="<%=liste.get(i).getId_cas()%>" /> <input type="hidden"
+									name="action" value="testsDuCas" /> <input type="submit"
+									value="tests" />
+							</form></td>
 						<%
 							
 						%><td><%=liste.get(i).getNom_complet()%></td>
@@ -108,11 +114,13 @@ import="com.DAO.TestPcrDAO"
 					%>
 
 					</tr>
-				</table>
-			</td>
+				</table></td>
+			<td></td>
 			<td>
-			</td>
-			<td><form action="controleur" method="post">
+				<center>
+					<h2>gestion des tests</h2>
+				</center>
+				<form action="controleur" method="post">
 					<input type="hidden" name="action" value="ajouterTestPcr" /> <input
 						type="submit" value="ajouter un testPcr" />
 				</form>
@@ -129,7 +137,7 @@ import="com.DAO.TestPcrDAO"
 						
 					%><tr>
 						<%
-						try {
+							try {
 							listep = TestPcrDAO.getListe();
 							String str1 = "";
 							str1 = "=======liste des testPcr enregistrés=======\n";
@@ -165,7 +173,78 @@ import="com.DAO.TestPcrDAO"
 					%>
 
 					</tr>
-				</table></td>
+				</table>
+			</td>
+		</tr>
+		<tr></tr>
+		<tr>
+			<td>
+				<center>
+					<h2>
+						détail des tests du cas
+						<%=request.getAttribute("id_casToSearch")%></h2>
+				</center>
+				<center>
+					<table border=1>
+						<tr>
+							<th>id</th>
+							<th>jour</th>
+							<th>mois</th>
+							<th>annee</th>
+							<th>cas testé</th>
+							<th>resultat</th>
+						</tr>
+						<%
+							ArrayList<TestPcr> listec = new ArrayList<TestPcr>();
+						String id_cas = (String) request.getAttribute("id_casToSearch");
+
+						try {
+							listec = TestPcrDAO.getListe();
+							String str1 = "";
+							str1 = "=======liste des testsPcr enregistrés pour un cas=======\n";
+							for (int i = 0; i < listec.size(); i++) {
+								String strc = listec.get(i).getId_cas() + "";
+								if (strc.equals(id_cas)) {
+							str1 = str1 + listec.get(i).toString() + "\n";
+								}
+							}
+							System.out.println(str1);
+							for (int i = 0; i < listec.size(); i++) {
+								String strc = listec.get(i).getId_cas() + "";
+								if (strc.equals(id_cas)) {
+						%><tr>
+							<td><%=listec.get(i).getId_test()%></td>
+							<%
+								
+							%><td><%=listec.get(i).getJour()%></td>
+							<%
+								
+							%><td><%=listec.get(i).getMois()%></td>
+							<%
+								
+							%><td><%=listec.get(i).getAnnee()%></td>
+							<%
+								
+							%><td><%=listec.get(i).getId_cas()%></td>
+							<%
+								
+							%><td><%=listec.get(i).getResultat()%></td>
+						</tr>
+						<%
+							}
+						}
+
+						} catch (Exception e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+						%>
+
+					</table>
+				</center>
+			</td>
+			<td></td>
+			<td></td>
 		</tr>
 	</table>
 
