@@ -1,20 +1,25 @@
 <project>
 	<target name="clean">
-		<delete dir="WebContent\WEB-INF\bin" />
+		<delete dir="build\classes\covid;build\classes\DAO;build\classes\Exceptions" />
 	</target>
 	<target name="compile">
 		<mkdir dir="WebContent\WEB-INF\bin" />
-		<javac destdir="WebContent\WEB-INF\bin" srcdir="src;tests" classpath="WebContent\WEB-INF\lib\junit.jar" />
+		<javac destdir="WebContent\WEB-INF\bin" srcdir="C:\Users\Administrator\new workspace\covid_projet_tu\src\com;C:\Users\Administrator\new workspace\covid_projet_tu\src\tests" classpath="c:\importsjar\mysql-connector.jar;c:\importsjar\jstl.jar;WebContent\WEB-INF\lib\junit.jar;WebContent\WEB-INF\lib\org.hamcrest.core_1.3.0.v20180420-1519.jar" />
 	</target>
 	<target name="tests" depends="compile">
 		<junit>
 			<classpath>
 				<pathelement location="WebContent\WEB-INF\lib\junit.jar" />
 				<pathelement location="WebContent\WEB-INF\lib\org.hamcrest.core_1.3.0.v20180420-1519.jar" />
+				<pathelement location="WebContent\WEB-INF\lib\org.hamcrest.core_1.3.0.v20180420-1519.jar" />
+				<pathelement location="c:\importsjar\mysql-connector.jar" />
+				<pathelement location="c:\importsjar\jstl.jar" />
 				<pathelement location="${basedir}WebContent\WEB-INF\bin" />
 			</classpath>
 			<formatter type="xml" />
-			<test name="triangle.TriangleTest" outfile="result">
+			<test name="tests.testsUnitairesCasEtAdmin" outfile="resultCasEtAdmin">
+			</test>
+			<test name="tests.testsUnitairesTestPcr" outfile="resultTestPcr">
 			</test>
 		</junit>
 	</target>
