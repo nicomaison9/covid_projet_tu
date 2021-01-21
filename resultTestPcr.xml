@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="0" hostname="vmi456567" name="tests.testsUnitairesTestPcr" skipped="0" tests="3" time="0.023" timestamp="2021-01-21T13:33:10">
+  <properties>
+    <property name="sun.desktop" value="windows" />
+    <property name="ant.library.dir" value="C:\apache-ant-1.10.7-bin\apache-ant-1.10.7\lib" />
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
+    <property name="ant.file.type" value="file" />
+    <property name="java.specification.version" value="11" />
+    <property name="sun.cpu.isalist" value="amd64" />
+    <property name="sun.jnu.encoding" value="Cp1252" />
+    <property name="java.class.path" value="C:\apache-ant-1.10.7-bin\apache-ant-1.10.7\bin\..\lib\ant-launcher.jar;C:\apache-ant-1.10.7-bin\apache-ant-1.10.7\lib\ant-antlr.jar;C:\apache-ant-1.10.7-bin\apache-ant-1.10.7\lib\ant-apache-bcel.jar;C:\apache-ant-1.10.7-bin\apache-ant-1.10.7\lib\ant-apache-bsf.jar;C:\apache-ant-1.10.7-bin\apache-ant-1.10.7\lib\ant-apache-log4j.jar;C:\apache-ant-1.10.7-bin\apache-ant-1.10.7\lib\ant-apache-oro.jar;C:\apache-ant-1.10.7-bin\apache-ant-1.10.7\lib\ant-apache-regexp.jar;C:\apache-ant-1.10.7-bin\apache-ant-1.10.7\lib\ant-apache-resolver.jar;C:\apache-ant-1.10.7-bin\apache-ant-1.10.7\lib\ant-apache-xalan2.jar;C:\apache-ant-1.10.7-bin\apache-ant-1.10.7\lib\ant-commons-logging.jar;C:\apache-ant-1.10.7-bin\apache-ant-1.10.7\lib\ant-commons-net.jar;C:\apache-ant-1.10.7-bin\apache-ant-1.10.7\lib\ant-imageio.jar;C:\apache-ant-1.10.7-bin\apache-ant-1.10.7\lib\ant-jai.jar;C:\apache-ant-1.10.7-bin\apache-ant-1.10.7\lib\ant-javamail.jar;C:\apache-ant-1.10.7-bin\apache-ant-1.10.7\lib\ant-jdepend.jar;C:\apache-ant-1.10.7-bin\apache-ant-1.10.7\lib\ant-jmf.jar;C:\apache-ant-1.10.7-bin\apache-ant-1.10.7\lib\ant-jsch.jar;C:\apache-ant-1.10.7-bin\apache-ant-1.10.7\lib\ant-junit.jar;C:\apache-ant-1.10.7-bin\apache-ant-1.10.7\lib\ant-junit4.jar;C:\apache-ant-1.10.7-bin\apache-ant-1.10.7\lib\ant-junitlauncher.jar;C:\apache-ant-1.10.7-bin\apache-ant-1.10.7\lib\ant-launcher.jar;C:\apache-ant-1.10.7-bin\apache-ant-1.10.7\lib\ant-netrexx.jar;C:\apache-ant-1.10.7-bin\apache-ant-1.10.7\lib\ant-swing.jar;C:\apache-ant-1.10.7-bin\apache-ant-1.10.7\lib\ant-testutil.jar;C:\apache-ant-1.10.7-bin\apache-ant-1.10.7\lib\ant-xz.jar;C:\apache-ant-1.10.7-bin\apache-ant-1.10.7\lib\ant.jar" />
+    <property name="java.vm.vendor" value="Oracle Corporation" />
+    <property name="sun.arch.data.model" value="64" />
+    <property name="user.variant" value="" />
+    <property name="java.vendor.url" value="http://java.oracle.com/" />
+    <property name="user.timezone" value="" />
+    <property name="os.name" value="Windows Server 2016" />
+    <property name="java.vm.specification.version" value="11" />
+    <property name="user.country" value="US" />
+    <property name="sun.java.launcher" value="SUN_STANDARD" />
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-11.0.6\bin" />
+    <property name="sun.java.command" value="org.apache.tools.ant.launch.Launcher tests" />
+    <property name="jdk.debug" value="release" />
+    <property name="sun.cpu.endian" value="little" />
+    <property name="user.home" value="C:\Users\Administrator" />
+    <property name="user.language" value="en" />
+    <property name="sun.stderr.encoding" value="cp437" />
+    <property name="java.specification.vendor" value="Oracle Corporation" />
+    <property name="java.version.date" value="2020-01-14" />
+    <property name="java.home" value="C:\Program Files\Java\jdk-11.0.6" />
+    <property name="basedir" value="C:\Users\Administrator\new workspace\covid_projet_tu" />
+    <property name="file.separator" value="\" />
+    <property name="java.vm.compressedOopsMode" value="32-bit" />
+    <property name="line.separator" value="&#xd;&#xa;" />
+    <property name="sun.stdout.encoding" value="cp437" />
+    <property name="ant.java.version" value="11" />
+    <property name="java.vm.specification.vendor" value="Oracle Corporation" />
+    <property name="java.specification.name" value="Java Platform API Specification" />
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment" />
+    <property name="user.script" value="" />
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+    <property name="java.runtime.version" value="11.0.6+8-LTS" />
+    <property name="user.name" value="Administrator" />
+    <property name="ant.file" value="C:\Users\Administrator\new workspace\covid_projet_tu\build.xml" />
+    <property name="path.separator" value=";" />
+    <property name="os.version" value="10.0" />
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
+    <property name="ant.project.invoked-targets" value="tests" />
+    <property name="file.encoding" value="Cp1252" />
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM" />
+    <property name="java.vendor.version" value="18.9" />
+    <property name="ant.core.lib" value="C:\apache-ant-1.10.7-bin\apache-ant-1.10.7\lib\ant.jar" />
+    <property name="java.vendor.url.bug" value="http://bugreport.java.com/bugreport/" />
+    <property name="java.io.tmpdir" value="C:\Users\ADMINI~1\AppData\Local\Temp\" />
+    <property name="java.version" value="11.0.6" />
+    <property name="user.dir" value="C:\Users\Administrator\new workspace\covid_projet_tu" />
+    <property name="os.arch" value="amd64" />
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob" />
+    <property name="ant.home" value="C:\apache-ant-1.10.7-bin\apache-ant-1.10.7\bin\.." />
+    <property name="sun.os.patch.level" value="" />
+    <property name="ant.version" value="Apache Ant(TM) version 1.10.7 compiled on September 1 2019" />
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-11.0.6\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Java\jdk-11.0.6\bin;C:\oraclexe\app\oracle\product\11.2.0\server\bin;C:\Program Files (x86)\EasyPHP-DevServer-14.1VC11\binaries\php\php_runningversion;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\nodejs\;C:\Program Files\Java\jdk1.8.0_251\bin;C:\test\openssl-1.0.2j-fips-x86_64\OpenSSL\bin;C:\sonnarscanner\sonar-scanner-cli-4.2.0.1873-windows\sonar-scanner-4.2.0.1873-windows\bin;C:\apache-ant-1.10.7-bin\apache-ant-1.10.7\bin;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Git\cmd;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Roaming\npm;C:\Users\Administrator\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Administrator\AppData\Local\GitHubDesktop\bin;." />
+    <property name="java.vendor" value="Oracle Corporation" />
+    <property name="java.vm.info" value="mixed mode" />
+    <property name="java.vm.version" value="11.0.6+8-LTS" />
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+    <property name="java.class.version" value="55.0" />
+  </properties>
+  <testcase classname="tests.testsUnitairesTestPcr" name="testIdExist" time="0.002" />
+  <testcase classname="tests.testsUnitairesTestPcr" name="testafficher" time="0.018" />
+  <testcase classname="tests.testsUnitairesTestPcr" name="testvaliddate" time="0.0" />
+  <system-out><![CDATA[=======liste des TestPcr enregistrés=======
+TestPcr n°3 [id_cas=57, jour=21, mois=1, annee=2021, result=-1]
+TestPcr n°4 [id_cas=58, jour=21, mois=1, annee=2021, result=1]
+
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
