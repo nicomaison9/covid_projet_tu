@@ -36,15 +36,16 @@ public class Admin {
 	public void setLogin(String login) {
 		this.login = login;
 	}
-	public boolean passwordIsValid(String pass) {
+	public static boolean passwordIsValid(String pass) {
 		if (pass.contains("orsys"))
 		return true;
 		else return false;
 	}
 	
 	public void setPassword(String password) {
-		if (passwordIsValid(password)) this.password = password;
-		else System.out.println("le mot de passe n'est pas valide");
+//		if (Admin.passwordIsValid(password)) 
+			this.password = password;
+//		else System.out.println("le mot de passe n'est pas valide");
 	}
 
 	public static boolean isAdmin4real(Admin admin) {
